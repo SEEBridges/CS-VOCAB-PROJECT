@@ -7,8 +7,8 @@ import java.util.StringTokenizer;
 /**
  * The Glossary class.
  *
- * @author (your name here)
- * @version (version or date)
+ * @author (Carter Bridges)
+ * @version (11/21/2022)
  */
 public class Glossary
 {
