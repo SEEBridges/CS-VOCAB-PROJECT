@@ -8,13 +8,6 @@ public class Entry
 {
     private String term;
     private String definition;
-    public static void main(String[] args)
-    {
-        Entry e1 = new Entry("void", "it does a thing");
-        System.out.println(e1.term);
-        System.out.println(e1.toString());
-        System.out.println(e1.equals(e1.toString()));
-    }
     /**
      * No-arg constructor for objects of class Entry.
      */
@@ -89,7 +82,7 @@ public class Entry
      */
     public String toString()
     {
-        String str = String.format("%S - %s.\n", term, definition);
+        String str = String.format("%s - %s.\n", term, definition);
         return str;
     }
 
@@ -101,7 +94,7 @@ public class Entry
      */
     public boolean equals(Entry entry)
     {
-        if (term.equals(entry.term) && definition.equals(entry.definition))
+        if (entry.term.compareTo(term) == 0 && entry.definition.compareTo(definition) == 0)
         {
             return true;
         }
