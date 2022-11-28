@@ -1,0 +1,92 @@
+﻿Posttest loop: This loop places the condition at the end of the loop and if the condition is true the keyword EXIT is used to stop the looping.
+User-controlled loop: A loop which is controlled by the user.
+Conditional loop: A loop which will continue if and only if said condition is true.
+Count-controlled loop: A count-controlled repetition will exit after running a certain number of times.
+Initialization expression: An expression which initializes a loop.
+Test expression: a syntactic entity in a programming language that may be evaluated to test its value.
+Update expression: An update expression specifies how UpdateItem will modify the attributes of an item
+For loop: A control flow statement that iterates a part of the programs multiple times
+Control variable: A program variable that is used to regulate the flow of control of the program.
+Counter variable: A special type of variable which is used in the loop to count the repetitions or to know about in which repetition we are in.
+Running total: The cumulative sum of a value and all previous values in the column.
+Sentinel value: A special input value that tests the condition within the while loop.
+Accumulator: A variable which is initialized to zero and is incremented in each repetition with different values.
+Nested loop: An inner loop that appears in the loop body of another outer  loop.
+Continue statement: Breaks one iteration in the loop, if a specified condition occurs, and continues with the next iteration in the loop.
+Debug: The routine process of locating and removing bugs, errors or abnormalities from programs.
+Array:  A container object that holds a fixed number of values of a single type.
+Length field: A final method, which is applicable for string objects and you can use it to find the number of characters in a string. 
+ArrayList: A resizable array, which is present in the java. util package.
+Iteration: An Iterator is an object that can be used to loop through collections, like 
+ArrayList and HashSet.
+Algorithm: A process or set of rules to be followed in calculations or other problem-solving operations, especially by a computer.
+Comment: Not executed by the compiler and is used to provide information .
+Class: Like an object constructor or a blueprint for creating objects.
+Attribute: Class attributes are variables within a class.
+Method: Used to perform certain actions.
+Public: An access modifier used for classes, attributes, methods and constructors, making them accessible by any other class.
+Private: an access modifier used for attributes, methods and constructors, making them only accessible within the declared class.
+Access Modifier: controls the access level
+Access Specifier: help us to restrict the scope or visibility of a package, class, constructor, methods, variables, or other data members.
+Keyword: Reserved words that can’t be used as variables, methods, classes or any other identifiers. 
+Programmer-defined name:
+Scope: Variables are only accessible inside the region they are created.
+Class definition: Is a template used to create objects and to define object data types and methods.
+Method definition:A block of code which only runs when it is called.
+Semicolon: Used to terminate a statement. 
+Punctuation: Help the Java compiler interpret components of Java source code.
+Syntax: All the main rules, commands, constructions to write programs that the compiler and computer “understands”.
+Statement: Instructions that tell the programming language what to do
+Println: Used to print an argument that is passed to it.
+Printf: Prints a string on the screen using a “format string” that includes the instructions to mix several strings and produce the final string to be printed on the screen. i
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Boolean: A Java expression that returns a Boolean value, true or false.
+Char: The char keyword is a data type that is used to store a single character.
+Unicode: Computer systems internally store data in binary representation.
+Assignment operator: Assignment operators are used to assign values to variables, == operator.
+Integer division: Similar to normal division remainder is discarded, / operator.
+Unary: The unary operator is an operator that can be used only with an operand. It is used to represent the positive or negative value, increment/decrement the value by 1, and complement a Boolean value.
+Binary: Either 1 or 0 to represent true or false.
+Ternary: a condensed form of the if-else statement that also returns a value.
+Negation operator: The logical NOT, also called logical negation or logical complement) operator reverses the meaning of a condition.
+Modulus: Modulo or Remainder Operator returns the remainder of the two numbers after division
+Truncate: to trim some digits of a float or double-type number or some characters of a string from the right.
+Precedence: Operator precedence specifies the manner in which operands are grouped with operators
+Associativity: When an expression has two operators with the same precedence, the operators and operands are grouped according to their associativity.
+Combined Assignment operators: Provide a shorter syntax for assigning the result of an arithmetic or bitwise operator. They perform the operation on the two operands before assigning the result to the first operand.
+Compound operators: An assignment operator is a binary operator that assigns the result of the right-hand side to the variable on the left-hand side.
+Widening conversion: Widening conversion takes place when two data types are automatically converted, smaller data type to larger.
+Narrowing conversion:  When a larger data type is converted to a smaller data type.
+Cast operator: Type casting is when you assign a value of one primitive data type to another type.
+Final: When a variable is declared with the final keyword, its value can’t be modified, essentially, a constant.
+Named constants: A named constant is like a variable except that
+you are required to give an initial value for a named constant where you declare it, and you cannot change its value.
