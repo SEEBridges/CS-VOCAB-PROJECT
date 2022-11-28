@@ -90,14 +90,40 @@ public class Glossary
         entries[numEntries + 1] = entry; //fix
     }
 
-    /**
+      /**
      * Method removeEntry.
-     *
+     * 
      * @param entry to be added
      */
     public void removeEntry(String term)
     {
+        int index = -1;
+        for (int i = 0; i < numEntries; i++)
+        {
+            if (entries[i].getTerm().equalsIgnoreCase(term))
+            {
+                entries[i] = null;
+                index = i;
+            }
+        }
+        numEntries--;
+        shift(index);
+    }   
 
+    /**
+     * Method shift.
+     *
+     * @param index index to shift down to
+     */
+    public void shift(int index)
+    {
+        if (index != -1)
+        {
+            for (int i = index; i < entries.length - 1; i++)
+            {
+                entries[i] = entries[i + 1];
+            }
+        }
     }
 
     /**
