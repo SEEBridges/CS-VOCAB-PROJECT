@@ -2,8 +2,8 @@ import java.util.*;
 /**
  * The VocabQuiz class.
  * 
- * @author (name)
- * @version (11/21/22 or date)
+ * @author (Austin Singer)
+ * @version (11/28/2022)
  */
 public class VocabQuiz
 {
