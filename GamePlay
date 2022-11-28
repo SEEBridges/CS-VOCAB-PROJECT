@@ -151,6 +151,21 @@ public class GamePlay
     {
 
     }
+    
+    public Glossary getGlossary()
+{
+        return glossary;
+} 
+
+public static void main(String[] args) throws FileNotFoundException
+{
+        GamePlay gamePlay = new GamePlay("VocabList.txt");
+        System.out.println(gamePlay.getGlossary().toString());
+        System.out.println();
+        System.out.println();
+        gamePlay.getGlossary().removeEntry("API");
+        System.out.println(gamePlay.getGlossary().toString());
+}
 }
 
 
