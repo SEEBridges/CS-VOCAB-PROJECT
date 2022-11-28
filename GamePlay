@@ -1,6 +1,4 @@
-
-/**
- * Write a description of class GamePlay here.
+* Write a description of class GamePlay here.
  *
  * @author (Austin Singer)
  * @version (11/21/22)
@@ -74,7 +72,7 @@ public class GamePlay
         Entry rightTerm = glossary.getEntries()[rightIndex];
         int index = generator.nextInt(TEMP_LIST_COUNT);
         entries[index] = rightTerm;
-        
+
         displayRound(entries, index);
         if (keyboard.nextInt() -1 == index)
         {
@@ -105,12 +103,12 @@ public class GamePlay
     public void playContinuousGame()
     {
         System.out.println("Would you like top play another round (enter 0 to continue or -1 to quit)?/t");
-        
+
         while(keyboard.nextInt() != -1)
         {
-        playRound();
+            playRound();
         }
-        
+
     }
 
     /**
@@ -122,9 +120,8 @@ public class GamePlay
     public void displayRound(Entry[] entries, int index)
     {
         System.out.println("Select the correctdefinition "
-        + "for the following  term: " + entries[index].getTerm());
-        
-        
+            + "for the following  term: " + entries[index].getTerm());
+
     }
 
     /**
@@ -136,4 +133,6 @@ public class GamePlay
 
     }
 }
+
+
 
