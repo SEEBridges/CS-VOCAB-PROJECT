@@ -1,43 +1,51 @@
-import java.util.Random;
-import java.util.Scanner;
-import java.io.FileNotFoundException;
 
 /**
- * The Game class.
+ * Write a description of class GamePlay here.
  *
- * @author (Carter Bridges)
- * @version (11/25/2022)
+ * @author (Austin Singer)
+ * @version (11/21/22)
  */
+import java.util.*;
+import java.io.FileNotFoundException;
+
 public class GamePlay
 {
     public final int TEMP_LIST_COUNT = 4;
-    Glossary glossary;
-    Random generate;
-    Scanner keyboard;
+    private Glossary glossary;
+    private Random generator;
+    private Scanner keyboard;
     private int correct;
     private int incorrect;
-    
+
     /**
      * No-arg GamePlay Constructor.
      *
      */
-    public GamePlay() throws FileNotFoundException
+    public GamePlay() throws java.io.IOException,FileNotFoundException
     {
         glossary = new Glossary();
-        generate = new Random();
+        glossary.readFile("VocabList.txt");
+        generator = new Random();
         keyboard = new Scanner(System.in);
         correct = 0;
         incorrect = 0;
+
     }
-    
+
     /**
      * Two-arg GamePlay Constructor.
      *
      * @param filename filename of terms and definitions to read
      * @param selection menu option of user for game choice
      */
-    public GamePlay(String filename)
+    public GamePlay(String fileName) throws java.io.IOException
     {
+        glossary = new Glossary();
+        glossary.readFile(fileName);
+        generator = new Random();
+        keyboard = new Scanner(System.in);
+        correct = 0;
+        incorrect = 0;
 
     }
 
@@ -48,6 +56,10 @@ public class GamePlay
      */
     public void makeSelection(int selection)
     {
+        //use switch statement 
+        //1 = Print all Entries
+        //2 = play short round
+        //3 = play long round (20)
 
     }
 
@@ -57,7 +69,21 @@ public class GamePlay
      */
     public void playRound()
     {
-
+        Entry[] entries = new Entry[TEMP_LIST_COUNT];
+        int rightIndex = generator.nextInt(glossary.getNumEntries());
+        Entry rightTerm = glossary.getEntries()[rightIndex];
+        int index = generator.nextInt(TEMP_LIST_COUNT);
+        entries[index] = rightTerm;
+        
+        displayRound(entries, index);
+        if (keyboard.nextInt() -1 == index)
+        {
+            correct++;
+        }
+        else 
+        {
+            incorrect++;
+        }
     }
 
     /**
@@ -67,6 +93,8 @@ public class GamePlay
      */
     public void playLimitedGame(int rounds)
     {
+        //use a a loop to play number of rounds specified by parameter
+        playRound();
 
     }
 
@@ -76,7 +104,13 @@ public class GamePlay
      */
     public void playContinuousGame()
     {
-
+        System.out.println("Would you like top play another round (enter 0 to continue or -1 to quit)?/t");
+        
+        while(keyboard.nextInt() != -1)
+        {
+        playRound();
+        }
+        
     }
 
     /**
@@ -87,7 +121,10 @@ public class GamePlay
      */
     public void displayRound(Entry[] entries, int index)
     {
-
+        System.out.println("Select the correctdefinition "
+        + "for the following  term: " + entries[index].getTerm());
+        
+        
     }
 
     /**
@@ -99,3 +136,4 @@ public class GamePlay
 
     }
 }
+
