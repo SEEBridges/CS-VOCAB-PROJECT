@@ -1,7 +1,7 @@
 * Write a description of class GamePlay here.
  *
- * @author (Austin Singer)
- * @version (11/21/22)
+ * @author (Carter Bridges, Austin Singer)
+ * @version (11/28/22)
  */
 import java.util.*;
 import java.io.FileNotFoundException;
@@ -54,11 +54,30 @@ public class GamePlay
      */
     public void makeSelection(int selection)
     {
-        //use switch statement 
-        //1 = Print all Entries
-        //2 = play short round
-        //3 = play long round (20)
-
+        switch(selection)
+        {
+            case 1:
+                System.out.print(glossary.toString());
+                break;
+            case 2:
+                playLimitedGame(5);
+                printResults();
+                break;
+            case 3:
+                playLimitedGame(20);
+                printResults();
+                break;
+            case 4:
+                playContinuousGame();
+                printResults();
+                break;
+            case 5:
+                System.out.print("see ya next time! \n");
+                break;
+            default:
+                System.out.print("\n");
+                break;
+        }
     }
 
     /**
