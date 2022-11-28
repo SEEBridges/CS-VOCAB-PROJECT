@@ -17,12 +17,11 @@ public class Glossary
     private Entry[] entries;
     public static void main(String[] args) throws IOException
     {
-        Glossary g1 = new Glossary();
         Glossary g2 = new Glossary(15);
-        System.out.println(g1.entries.length);
-        System.out.println(g2.entries.length);
-        g1.readFile("VocabList.txt");
+        g2.readFile("VocabList.txt");
+        g2.toString();
     }
+
     /**
      * No-arg constructor for objects of class Glossary.
      */
@@ -50,7 +49,7 @@ public class Glossary
      */
     public int getNumEntries()
     {
-        return -1;
+        return entries.length;
     }
 
     /**
@@ -60,7 +59,7 @@ public class Glossary
      */
     public Entry[] getEntries()
     {
-        return new Entry[0];
+        return entries;
     }
 
     /**
@@ -76,8 +75,7 @@ public class Glossary
         {
             String str = inputFile.nextLine();
             String[] arrOfStr = str.split(":");
-            for (String a : arrOfStr)
-            System.out.println(a);
+            addEntry(new Entry(arrOfStr[0],arrOfStr[1]));
         }
         inputFile.close();
     }
@@ -89,7 +87,7 @@ public class Glossary
      */
     public void addEntry(Entry entry)
     {
-
+        entries[numEntries + 1] = entry; //fix
     }
 
     /**
@@ -109,6 +107,14 @@ public class Glossary
      */
     public String toString()
     {
+        for (int i = 0; i < entries.length; i++)
+        {
+            if (entries[i] != null)
+            {
+                String str = entries[i] + "" + entries[i + 1];
+                return str;
+            }
+        }
         return "";
     }
 }
