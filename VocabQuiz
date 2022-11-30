@@ -1,9 +1,11 @@
 import java.util.*;
+import java.io.*;
+
 /**
  * The VocabQuiz class.
  * 
  * @author (Austin Singer)
- * @version (11/28/2022)
+ * @version (11/21/22)
  */
 public class VocabQuiz
 {
@@ -12,14 +14,17 @@ public class VocabQuiz
      *
      * @param args command line arguments
      */
-    public static void main(String[] args)
+    public static void main(String[] args) throws java.io.IOException,FileNotFoundException
     {
         Scanner kb = new Scanner(System.in);
-        GamePlay gameplay = new GamePlay(VocabList.txt);
+        GamePlay gameplay = new GamePlay("VocabList.txt");
         
         System.out.print("1 - Print All Entries\n" + "2 - Play Short Round\n"
             + "3 - Play Long Round\n" + "4 - Continuous Play\n" + "5 - Exit" );
+        
         int i = kb.nextInt();    
+        gameplay.makeSelection(i);    
+            
         do
         {
             gameplay.printResults();
@@ -42,8 +47,8 @@ public class VocabQuiz
         while(i == 4);
         do
         {
-            System.out.println("Good Bye.");
+            System.out.println("GoodBye.");
         }
         while(i==5);
-    }
+        } 
 }
