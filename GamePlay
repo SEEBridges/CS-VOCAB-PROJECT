@@ -108,11 +108,14 @@ public class GamePlay
      *
      * @param rounds number of rounds to play
      */
-    public void playLimitedGame(int rounds)
+     public void playLimitedGame(int rounds)
     {
-        //use a a loop to play number of rounds specified by parameter
+        int i=0;
+        while (i < rounds)
+        {
         playRound();
-
+        i++;
+        }
     }
 
     /**
