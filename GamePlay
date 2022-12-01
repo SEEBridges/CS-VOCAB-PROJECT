@@ -121,7 +121,7 @@ public class GamePlay
      */
     public void playContinuousGame()
     {
-        System.out.println("Would you like top play another round (enter 0 to continue or -1 to quit)?/t");
+        System.out.println("Would you like to play another round (enter 0 to continue or -1 to quit)?");
 
         while(keyboard.nextInt() != -1)
         {
@@ -138,7 +138,7 @@ public class GamePlay
      */
     public void displayRound(Entry[] entries, int index)
     {
-        System.out.println("Select the correctdefinition "
+        System.out.println("Select the correct definition "
             + "for the following  term: " + entries[index].getTerm());
 
     }
@@ -151,22 +151,20 @@ public class GamePlay
     {
 
     }
-    
-    public Glossary getGlossary()
-{
-        return glossary;
-} 
 
-public static void main(String[] args) throws FileNotFoundException
-{
+    public Glossary getGlossary()
+    {
+        return glossary;
+    } 
+
+    /**public static void main(String[] args) throws java.io.IOException
+    {
         GamePlay gamePlay = new GamePlay("VocabList.txt");
         System.out.println(gamePlay.getGlossary().toString());
         System.out.println();
         System.out.println();
         gamePlay.getGlossary().removeEntry("API");
         System.out.println(gamePlay.getGlossary().toString());
+    }
+    **/
 }
-}
-
-
-
