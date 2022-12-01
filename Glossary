@@ -14,13 +14,12 @@ public class Glossary
     public final int WORD_COUNT = 210;
     private int numEntries;
     private Entry[] entries;
-    public static void main(String[] args) throws IOException
+    /*public static void main(String[] args) throws IOException
     {
         Glossary g2 = new Glossary();
         g2.readFile("VocabList.txt");
         System.out.println(g2.toString());
-        System.out.println(g2.entries.length);
-    }
+    }*/
 
     /**
      * No-arg constructor for objects of class Glossary.
@@ -70,15 +69,13 @@ public class Glossary
     public void readFile(String filename) throws IOException
     {
         File file = new File(filename);
-        Scanner inputFile = new Scanner(file);
-        int i = 0;
-        while (inputFile.hasNext() == true)
+        Scanner inputFile = new Scanner(file);  
+        while (inputFile.hasNext())
         {
             String str = inputFile.nextLine();
-            String[] arrOfStr = str.split(":");
-            addEntry(new Entry(arrOfStr[i],arrOfStr[i + 1]));
+            String[] arrOfStr = str.split(":", 0);
+            addEntry(new Entry(arrOfStr[0], arrOfStr[1]));
         }
-        i += 2;
         inputFile.close();
     }
 
@@ -93,7 +90,7 @@ public class Glossary
         numEntries++;
     }
 
-      /**
+    /**
      * Method removeEntry.
      * 
      * @param entry to be added
@@ -136,14 +133,14 @@ public class Glossary
      */
     public String toString()
     {
+        String str = "";
         for (int i = 0; i < entries.length; i++)
         {
             if (entries[i] != null)
             {
-                String str = entries[i] + "" + entries[i + 1];
-                return str;
+                str += (entries[i].toString());
             }
         }
-        return "";
+        return str;
     }
 }
