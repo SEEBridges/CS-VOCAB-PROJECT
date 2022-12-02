@@ -14,13 +14,6 @@ public class Glossary
     public final int WORD_COUNT = 210;
     private int numEntries;
     private Entry[] entries;
-    /*public static void main(String[] args) throws IOException
-    {
-        Glossary g2 = new Glossary();
-        g2.readFile("VocabList.txt");
-        System.out.println(g2.toString());
-    }*/
-
     /**
      * No-arg constructor for objects of class Glossary.
      */
