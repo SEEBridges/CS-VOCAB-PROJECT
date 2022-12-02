@@ -1,11 +1,11 @@
+import java.util.Random;
+import java.util.Scanner;
+import java.io.IOException;
 /** Write a description of class GamePlay here.
  *
  * @author (Carter Bridges, Austin Singer)
  * @version (11/28/22)
  */
-import java.util.*;
-import java.io.FileNotFoundException;
-
 public class GamePlay
 {
     public final int TEMP_LIST_COUNT = 4;
@@ -14,12 +14,11 @@ public class GamePlay
     private Scanner keyboard;
     private int correct;
     private int incorrect;
-
     /**
      * No-arg GamePlay Constructor.
      *
      */
-    public GamePlay() throws java.io.IOException,FileNotFoundException
+    public GamePlay() throws IOException
     {
         glossary = new Glossary();
         glossary.readFile("VocabList.txt");
@@ -27,7 +26,6 @@ public class GamePlay
         keyboard = new Scanner(System.in);
         correct = 0;
         incorrect = 0;
-
     }
 
     /**
@@ -36,7 +34,7 @@ public class GamePlay
      * @param filename filename of terms and definitions to read
      * @param selection menu option of user for game choice
      */
-    public GamePlay(String fileName) throws java.io.IOException
+    public GamePlay(String fileName) throws IOException
     {
         glossary = new Glossary();
         glossary.readFile(fileName);
@@ -44,7 +42,6 @@ public class GamePlay
         keyboard = new Scanner(System.in);
         correct = 0;
         incorrect = 0;
-
     }
 
     /**
@@ -72,7 +69,7 @@ public class GamePlay
                 printResults();
                 break;
             case 5:
-                System.out.print("see ya next time! \n");
+                System.out.print("See ya next time!\n");
                 break;
             default:
                 System.out.print("\n");
@@ -91,7 +88,6 @@ public class GamePlay
         Entry rightTerm = glossary.getEntries()[rightIndex];
         int index = generator.nextInt(TEMP_LIST_COUNT);
         entries[index] = rightTerm;
-
         displayRound(entries, index);
         if (keyboard.nextInt() -1 == index)
         {
@@ -108,13 +104,11 @@ public class GamePlay
      *
      * @param rounds number of rounds to play
      */
-     public void playLimitedGame(int rounds)
+    public void playLimitedGame(int rounds)
     {
-        int i=0;
-        while (i < rounds)
+        for (int i = 0; i < rounds; i++)
         {
-        playRound();
-        i++;
+            playRound();
         }
     }
 
@@ -124,13 +118,11 @@ public class GamePlay
      */
     public void playContinuousGame()
     {
-        System.out.println("Would you like to play another round (enter 0 to continue or -1 to quit)?");
-
         while(keyboard.nextInt() != -1)
         {
             playRound();
+            System.out.println("Would you like top play another round (enter 0 to continue or -1 to quit)?\n");
         }
-
     }
 
     /**
@@ -141,9 +133,12 @@ public class GamePlay
      */
     public void displayRound(Entry[] entries, int index)
     {
-        System.out.println("Select the correct definition "
-            + "for the following  term: " + entries[index].getTerm());
-
+        System.out.println("Select the correct definition for the following term: "
+            + entries[index].getTerm());
+        for (int i = 0; i < entries.length; i++)
+        {
+            System.out.println(entries[i].getDefinition());
+        }
     }
 
     /**
@@ -152,22 +147,16 @@ public class GamePlay
      */
     public void printResults()
     {
-
+        System.out.printf("Correct: %-8d\tIncorrect: %-8d\n", correct, incorrect);
     }
 
+    /**
+     * Method getGlossary
+     *
+     * @return The return value
+     */
     public Glossary getGlossary()
     {
         return glossary;
     } 
-
-    /**public static void main(String[] args) throws java.io.IOException
-    {
-        GamePlay gamePlay = new GamePlay("VocabList.txt");
-        System.out.println(gamePlay.getGlossary().toString());
-        System.out.println();
-        System.out.println();
-        gamePlay.getGlossary().removeEntry("API");
-        System.out.println(gamePlay.getGlossary().toString());
-    }
-    **/
 }
